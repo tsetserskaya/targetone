@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingBottom="@dimen/activity_vertical_margin"
+android:paddingLeft="@dimen/activity_horizontal_margin"
+android:paddingRight="@dimen/activity_horizontal_margin"
+android:paddingTop="@dimen/activity_vertical_margin"
+tools:context="com.example.targetone.BuglerActivity"
+android:orientation="vertical">
+
+<!-- Название и кнопка для света -->
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:id="@+id/textLightBugler"
+    android:text="@string/bugler_light"
+    android:layout_marginTop="10dp"
+    android:layout_gravity="start"/>
+
+<ToggleButton
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text=""
+    android:id="@+id/toggleButtonBugler"
+    android:layout_marginTop="10dp"
+    android:layout_gravity="start"
+    android:textOn="@string/on"
+    android:textOff="@string/off"/>
+
+<!-- Название и спиннер для сигнала -->
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:text="@string/bugler_signal"
+    android:id="@+id/textSignalBugler" />
+
+<Spinner
+    android:layout_width="170dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/spinnerSignalBugler"/>
+
+<!-- Название и спиннер для звука -->
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:text="@string/bugler_sound"
+    android:id="@+id/textSoundBugler" />
+
+<Spinner
+    android:layout_width="170dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/spinnerSoundBugler" />
+
+</LinearLayout>

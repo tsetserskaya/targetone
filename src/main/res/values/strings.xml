@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">TargetOne</string>
+    <string name="mainLogo">Main Logo</string>
+    <string name="LogoCompany">Logo of Company</string>
+    <string name="action_share">Поделиться</string>
+    <string name="executing_task">Загрузка</string>
+    <string name="company_site">Our site: http://rdbce.by/</string>
+    <string name="company_address">Address:\n220029, Republic of Belarus,\n
+        Minsk,  Krasnaya Str.,  7, k 25.\nContacts:\n</string>
+    <string name="company_phone">(+375-17)288-11-82</string>
+    <string name="company_contacts">(+375-17)288-11-82 (fax)\n(+375-17)284-91-32 (marketing)\n
+        E-mail:\n</string>
+
+    <string name="company_email">office@rdbce.by</string>
+    <string name="aboutApp">It is application for remote control using Bluetooth for shooting range</string>
+
+    <string-array name="options">
+        <item>Полигон</item>
+        <item>О программе</item>
+        <item>Обратная связь</item>
+    </string-array>
+    <string-array name="ranges">
+        <item>Рубеж 100</item>
+        <item>Рубеж 200</item>
+        <item>Рубеж 300</item>
+        <item>Рубеж 400</item>
+        <item>Рубеж 500</item>
+        <item>Рубеж 600</item>
+        <item>Рубеж 700</item>
+        <item>Рубеж 800</item>
+        <item>Рубеж 900</item>
+        <item>Рубеж 1000</item>
+    </string-array>
+
+
+    <string name="bugler_light">Свет</string>
+    <string name="bugler_sound">Звук</string>
+    <string name="bugler_signal">Сигнал</string>
+    <string name="on">Вкл</string>
+    <string name="off">Выкл</string>
+    <string name="rx">Rx</string>
+    <string name="tx">Tx</string>
+
+
+    <string-array name="signals">
+        <item>Выберите сигнал</item>
+        <item>Внимание</item>
+        <item>Огонь</item>
+        <item>Отбой</item>
+    </string-array>
+    <string-array name="sounds">
+        <item>Выберите звук</item>
+        <item>TEST</item>
+        <item>ALARM</item>
+        <item>KAP</item>
+        <item>POP</item>
+        <item>RING</item>
+        <item>TRUUM</item>
+        <item>PIST</item>
+        <item>AUTO</item>
+    </string-array>
+
+</resources>
