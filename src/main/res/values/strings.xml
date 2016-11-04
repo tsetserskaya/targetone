@@ -60,4 +60,9 @@
         <item>AUTO</item>
     </string-array>
 
+    <string name="RedLight">Красный</string>
+    <string name="BlueLight">Синий</string>
+    <string name="GreenLight">Зеленый</string>
+    <string name="WhiteLight">Белый</string>
+
 </resources>

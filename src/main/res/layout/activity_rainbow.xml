@@ -10,41 +10,79 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.targetone.RainbowActivity">
 
-    <ToggleButton
-        android:text="ToggleButton"
-        android:layout_width="wrap_content"
+    <SeekBar
+        android:id="@+id/mySeekingBar_R"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="75dp"
+        android:max="240"
+        android:progress="0"
+        android:layout_marginTop="27dp"
+        android:layout_alignParentStart="true" />
+
+    <SeekBar
+        android:id="@+id/mySeekingBar_B"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="240"
+        android:progress="0"
+        android:layout_marginTop="42dp"
+        android:layout_below="@+id/mySeekingBar_W"
+        android:layout_alignParentStart="true" />
+
+    <SeekBar
+        android:id="@+id/mySeekingBar_G"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="240"
+        android:progress="0"
         android:layout_marginTop="34dp"
-        android:id="@+id/toggleButton" />
+        android:layout_below="@+id/mySeekingBar_B"
+        android:layout_alignParentStart="true" />
 
-    <ToggleButton
-        android:text="ToggleButton"
+    <SeekBar
+        android:id="@+id/mySeekingBar_W"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="240"
+        android:progress="0"
+        android:layout_marginTop="39dp"
+        android:layout_below="@+id/mySeekingBar_R"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="@string/WhiteLight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toggleButton"
-        android:layout_alignEnd="@+id/toggleButton"
-        android:layout_marginTop="17dp"
-        android:id="@+id/toggleButton2" />
+        android:id="@+id/textView6"
+        android:layout_below="@+id/mySeekingBar_R"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp" />
 
-    <ToggleButton
-        android:text="ToggleButton"
+    <TextView
+        android:text="@string/GreenLight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toggleButton2"
-        android:layout_alignStart="@+id/toggleButton2"
-        android:layout_marginTop="20dp"
-        android:id="@+id/toggleButton3" />
+        android:id="@+id/textView8"
+        android:layout_below="@+id/mySeekingBar_B"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="13dp" />
 
-    <ToggleButton
-        android:text="ToggleButton"
+    <TextView
+        android:text="@string/RedLight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toggleButton3"
-        android:layout_alignStart="@+id/toggleButton3"
-        android:layout_marginTop="16dp"
-        android:id="@+id/toggleButton4" />
+        android:id="@+id/textView9"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="@string/BlueLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView7"
+        android:layout_below="@+id/mySeekingBar_W"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp" />
+
 
 </RelativeLayout>
