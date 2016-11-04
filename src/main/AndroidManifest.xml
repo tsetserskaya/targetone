@@ -36,7 +36,7 @@
         <activity android:name=".WellActivity" />
         <activity android:name=".RainbowActivity" />
         <activity android:name=".PagerActivity" />
-        <activity android:name=".MoonwalkerActivity"></activity>
+        <activity android:name=".MoonwalkerActivity" />
     </application>
 
 </manifest>
