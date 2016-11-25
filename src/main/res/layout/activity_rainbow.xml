@@ -17,7 +17,9 @@
         android:max="240"
         android:progress="0"
         android:layout_marginTop="27dp"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:progressDrawable="@drawable/red_scrubber_progress"
+        android:thumb="@drawable/red_scrubber_control" />
 
     <SeekBar
         android:id="@+id/mySeekingBar_B"
@@ -27,7 +29,9 @@
         android:progress="0"
         android:layout_marginTop="42dp"
         android:layout_below="@+id/mySeekingBar_W"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:progressDrawable="@drawable/blue_scrubber_progress"
+        android:thumb="@drawable/blue_scrubber_control"/>
 
     <SeekBar
         android:id="@+id/mySeekingBar_G"
@@ -37,7 +41,9 @@
         android:progress="0"
         android:layout_marginTop="34dp"
         android:layout_below="@+id/mySeekingBar_B"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:progressDrawable="@drawable/green_scrubber_progress"
+        android:thumb="@drawable/green_scrubber_control"/>
 
     <SeekBar
         android:id="@+id/mySeekingBar_W"
@@ -47,7 +53,9 @@
         android:progress="0"
         android:layout_marginTop="39dp"
         android:layout_below="@+id/mySeekingBar_R"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:progressDrawable="@drawable/white_scrubber_progress"
+        android:thumb="@drawable/white_scrubber_control"/>
 
     <TextView
         android:text="@string/WhiteLight"

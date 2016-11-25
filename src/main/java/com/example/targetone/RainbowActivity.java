@@ -36,10 +36,11 @@ public class RainbowActivity extends Activity {
     public SQLiteDatabase db;
     public Cursor cursor;
 
-    String address = MainActivity.address;
+    //String address = MainActivity.address;
+    public static final String address = "98:D3:31:20:45:24";
 
     public BluetoothAdapter btAdapter = null;
-    //Сокет, с помощью которого мы будем отправлять данные на Arduino
+    //РЎРѕРєРµС‚, СЃ РїРѕРјРѕС‰СЊСЋ РєРѕС‚РѕСЂРѕРіРѕ РјС‹ Р±СѓРґРµРј РѕС‚РїСЂР°РІР»СЏС‚СЊ РґР°РЅРЅС‹Рµ РЅР° Arduino
     BluetoothSocket clientSocket = null;
     OutputStream outStream = null;
 
@@ -97,9 +98,9 @@ public class RainbowActivity extends Activity {
                     btAdapter = BluetoothAdapter.getDefaultAdapter();
                     if (btAdapter != null) {
                         if (btAdapter.isEnabled()) {
-                            //Пытаемся послать данные
+                            //РџС‹С‚Р°РµРјСЃСЏ РїРѕСЃР»Р°С‚СЊ РґР°РЅРЅС‹Рµ
                             try {
-                                //Получаем выходной поток для передачи данных
+                                //РџРѕР»СѓС‡Р°РµРј РІС‹С…РѕРґРЅРѕР№ РїРѕС‚РѕРє РґР»СЏ РїРµСЂРµРґР°С‡Рё РґР°РЅРЅС‹С…
                                 outStream = clientSocket.getOutputStream();
                                 if(v == redSeekBar) {
                                     outStream.write(RedLight);
@@ -154,28 +155,28 @@ public class RainbowActivity extends Activity {
         // Reset all streams and socket.
         resetConnection();
 
-        //Включаем bluetooth. Если он уже включен, то ничего не произойдет
+        //Р’РєР»СЋС‡Р°РµРј bluetooth. Р•СЃР»Рё РѕРЅ СѓР¶Рµ РІРєР»СЋС‡РµРЅ, С‚Рѕ РЅРёС‡РµРіРѕ РЅРµ РїСЂРѕРёР·РѕР№РґРµС‚
         String enableBT = BluetoothAdapter.ACTION_REQUEST_ENABLE;
         startActivityForResult(new Intent(enableBT), 0);
-        //Мы хотим использовать тот bluetooth-адаптер, который задается по умолчанию
+        //РњС‹ С…РѕС‚РёРј РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ С‚РѕС‚ bluetooth-Р°РґР°РїС‚РµСЂ, РєРѕС‚РѕСЂС‹Р№ Р·Р°РґР°РµС‚СЃСЏ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
         BluetoothAdapter bluetooth = BluetoothAdapter.getDefaultAdapter();
-        //Пытаемся проделать эти действия
+        //РџС‹С‚Р°РµРјСЃСЏ РїСЂРѕРґРµР»Р°С‚СЊ СЌС‚Рё РґРµР№СЃС‚РІРёСЏ
         try{
-            //Устройство с данным адресом - наш Bluetooth Bee
-            //Адрес опредеяется следующим образом: установите соединение
-            //между ПК и модулем (пин: 1234), а затем посмотрите в настройках
-            //соединения адрес модуля. Скорее всего он будет аналогичным.
+            //РЈСЃС‚СЂРѕР№СЃС‚РІРѕ СЃ РґР°РЅРЅС‹Рј Р°РґСЂРµСЃРѕРј - РЅР°С€ Bluetooth Bee
+            //РђРґСЂРµСЃ РѕРїСЂРµРґРµСЏРµС‚СЃСЏ СЃР»РµРґСѓСЋС‰РёРј РѕР±СЂР°Р·РѕРј: СѓСЃС‚Р°РЅРѕРІРёС‚Рµ СЃРѕРµРґРёРЅРµРЅРёРµ
+            //РјРµР¶РґСѓ РџРљ Рё РјРѕРґСѓР»РµРј (РїРёРЅ: 1234), Р° Р·Р°С‚РµРј РїРѕСЃРјРѕС‚СЂРёС‚Рµ РІ РЅР°СЃС‚СЂРѕР№РєР°С…
+            //СЃРѕРµРґРёРЅРµРЅРёСЏ Р°РґСЂРµСЃ РјРѕРґСѓР»СЏ. РЎРєРѕСЂРµРµ РІСЃРµРіРѕ РѕРЅ Р±СѓРґРµС‚ Р°РЅР°Р»РѕРіРёС‡РЅС‹Рј.
             BluetoothDevice device = bluetooth.getRemoteDevice(address);
             BluetoothAdapter.getDefaultAdapter().cancelDiscovery(); //TESTTTTTTTTTTTTTTTTTTTTTT
 
-            //Инициируем соединение с устройством
+            //РРЅРёС†РёРёСЂСѓРµРј СЃРѕРµРґРёРЅРµРЅРёРµ СЃ СѓСЃС‚СЂРѕР№СЃС‚РІРѕРј
             Method m = device.getClass().getMethod(
                     "createRfcommSocket", new Class[] {int.class});
 
             clientSocket = (BluetoothSocket) m.invoke(device, 1);
             clientSocket.connect();
 
-            //В случае появления любых ошибок, выводим в лог сообщение
+            //Р’ СЃР»СѓС‡Р°Рµ РїРѕСЏРІР»РµРЅРёСЏ Р»СЋР±С‹С… РѕС€РёР±РѕРє, РІС‹РІРѕРґРёРј РІ Р»РѕРі СЃРѕРѕР±С‰РµРЅРёРµ
         } catch (IOException e) {
             Log.d("BLUETOOTH", e.getMessage());
         } catch (SecurityException e) {
@@ -190,7 +191,7 @@ public class RainbowActivity extends Activity {
             Log.d("BLUETOOTH", e.getMessage());
         }
 
-        //Выводим сообщение об успешном подключении
+        //Р’С‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РѕР± СѓСЃРїРµС€РЅРѕРј РїРѕРґРєР»СЋС‡РµРЅРёРё
 //        Toast.makeText(getApplicationContext(), "BLUETOOTH IS CONNECTED", Toast.LENGTH_LONG).show();
 
     }
@@ -222,7 +223,7 @@ public class RainbowActivity extends Activity {
     }
 
     public void  TestARRAY() {
-        //Получение рубежа из интента
+        //РџРѕР»СѓС‡РµРЅРёРµ СЂСѓР±РµР¶Р° РёР· РёРЅС‚РµРЅС‚Р°
         String objectNo = (String) getIntent().getExtras().get(EXTRA_OBJECTNO2);
 
         String[] actions = new String[20];

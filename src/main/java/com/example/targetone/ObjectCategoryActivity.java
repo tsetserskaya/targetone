@@ -72,6 +72,7 @@ public class ObjectCategoryActivity extends ListActivity {
           String sPoint = "n8";
           String sLight = "50";
           String sBugler = "70";
+          String sRainbow = "A8";
 
         if (sCompare.equals(sLight))
         {
@@ -88,6 +89,12 @@ public class ObjectCategoryActivity extends ListActivity {
         {
             Intent intent = new Intent(ObjectCategoryActivity.this, PointActivity.class);
             intent.putExtra(PointActivity.EXTRA_OBJECTNO1, objectId);
+            startActivity(intent);
+        }
+        if (sCompare.equals(sRainbow))
+        {
+            Intent intent = new Intent(ObjectCategoryActivity.this, RainbowActivity.class);
+            intent.putExtra(RainbowActivity.EXTRA_OBJECTNO2, objectId);
             startActivity(intent);
         }
     }

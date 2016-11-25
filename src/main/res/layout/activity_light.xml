@@ -9,43 +9,42 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".LightActivity">
 
-    <TextView
-        android:id="@+id/mytext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
     <ToggleButton
         android:id="@+id/toggle_button_Rx"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/mytext"
-        android:textOn="@string/on"
-        android:textOff="@string/off"/>
+        android:textOn="@string/rx"
+        android:textOff="@string/rx"
+        android:gravity="start|center_vertical"
+        android:drawableEnd="@drawable/icon_on_off"
+        android:drawableRight="@drawable/icon_on_off"
+        android:textStyle="bold|italic"
+        android:textSize="24sp"
+        android:textColor="@color/text_color"
+        android:background="@drawable/button_background"/>
     <ToggleButton
         android:id="@+id/toggle_button_Tx"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toggle_button_Rx"
-        android:textOn="@string/on"
-        android:textOff="@string/off"/>
+        android:layout_marginTop="10dp"
+        android:textOn="@string/tx"
+        android:textOff="@string/tx"
+        android:gravity="start|center_vertical"
+        android:drawableEnd="@drawable/icon_on_off"
+        android:drawableRight="@drawable/icon_on_off"
+        android:textStyle="bold|italic"
+        android:textSize="24sp"
+        android:textColor="@color/text_color"
+        android:background="@drawable/button_background"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/rx"
-        android:id="@+id/textView"
-        android:layout_below="@+id/mytext"
-        android:layout_toRightOf="@+id/toggle_button_Rx" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/tx"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/toggle_button_Rx"
-        android:layout_toRightOf="@+id/toggle_button_Tx" />
-
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="340dp"
+        android:layout_below="@id/toggle_button_Tx"
+        android:id="@+id/imageViewLeo"
+        android:src="@drawable/arduino_normal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

@@ -9,15 +9,21 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".AboutActivity">
 
-    <ImageView android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:src="@drawable/techno_logo"/>
-
     <TextView
         android:id="@+id/textViewAboutApp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:text="@string/aboutApp" />
+        android:text="@string/aboutApp"
+        android:layout_marginTop="149dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:src="@drawable/techno_logo"
+        android:contentDescription="@string/aboutApp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp" />
 
 </RelativeLayout>

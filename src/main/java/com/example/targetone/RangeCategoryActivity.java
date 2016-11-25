@@ -2,6 +2,7 @@ package com.example.targetone;
 
 
 import android.app.ListActivity;
+import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -43,6 +44,10 @@ public class RangeCategoryActivity extends ListActivity {
             Toast toast = Toast.makeText(this, "Database unavailable", Toast.LENGTH_SHORT);
             toast.show();
         }
+
+        //Включаем bluetooth. Если он уже включен, то ничего не произойдет
+        String enableBT = BluetoothAdapter.ACTION_REQUEST_ENABLE;
+        startActivityForResult(new Intent(enableBT), 0);
     }
 
     @Override

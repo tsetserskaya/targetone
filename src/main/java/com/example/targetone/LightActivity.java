@@ -17,9 +17,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
@@ -39,6 +41,8 @@ public class LightActivity extends Activity implements View.OnClickListener{
     //Экземпляры классов наших кнопок
     ToggleButton redButton;
     ToggleButton greenButton;
+
+    ImageView leoImage;
 
     BluetoothAdapter btAdapter = null;
 
@@ -64,6 +68,7 @@ public class LightActivity extends Activity implements View.OnClickListener{
         //"Соединям" вид кнопки в окне приложения с реализацией
         redButton = (ToggleButton) findViewById(R.id.toggle_button_Rx);
         greenButton = (ToggleButton) findViewById(R.id.toggle_button_Tx);
+        leoImage = (ImageView)findViewById(R.id.imageViewLeo);
 
         //Добавлем "слушатель нажатий" к кнопке
         redButton.setOnClickListener(this);
@@ -76,6 +81,11 @@ public class LightActivity extends Activity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
+
+        if(redButton.isChecked() && greenButton.isChecked())leoImage.setImageResource(R.drawable.arduino_rx_tx_on);
+        else if(redButton.isChecked())leoImage.setImageResource(R.drawable.arduino_rx_on);
+        else if(greenButton.isChecked())leoImage.setImageResource(R.drawable.arduino_tx_on);
+        else if(!redButton.isChecked() && !greenButton.isChecked())leoImage.setImageResource(R.drawable.arduino_normal);
 
         btAdapter = BluetoothAdapter.getDefaultAdapter();
         if (btAdapter != null) {
@@ -92,7 +102,7 @@ public class LightActivity extends Activity implements View.OnClickListener{
 
                         if (redButton.isChecked()) {
                             outStream.write(RxOn);
-                         }
+                        }
                         else {
                             outStream.write(RxOff);
                         }

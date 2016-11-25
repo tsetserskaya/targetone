@@ -47,6 +47,11 @@ public class RangesDatabaseHelper extends SQLiteOpenHelper {
             insertObject(db, "Точка", "n81a06", 2);
             insertObject(db, "Точка", "n81a07", 2);
             insertObject(db, "Точка", "n81a08", 2);
+            //300m
+            insertObject(db, "Радуга", "A801", 3);
+            insertObject(db, "Радуга", "A802", 3);
+            insertObject(db, "Радуга", "A803", 3);
+            insertObject(db, "Радуга", "A804", 3);
             //others
             //range 1km
             insertObject(db, "Точка", "5001", 10);
@@ -126,9 +131,23 @@ public class RangesDatabaseHelper extends SQLiteOpenHelper {
             insertFrame(db, "n81a07", "PointOn",   "FF228107D00200000000000000CCAAFF");
             insertFrame(db, "n81a08", "PointOff",  "FF228108D00100000000000000CCAAFF");
             insertFrame(db, "n81a08", "PointOn",   "FF228108D00200000000000000CCAAFF");
-
-
-
+            //rainbow
+            insertFrame(db, "A801", "RedLight", "FF225001A8xy00000000000000CCAAFF");
+            insertFrame(db, "A801", "GreenLight", "FF225001A800xy000000000000CCAAFF");
+            insertFrame(db, "A801", "BlueLight", "FF225001A80000xy0000000000CCAAFF");
+            insertFrame(db, "A801", "WhiteLight", "FF225001A8000000xy00000000CCAAFF");
+            insertFrame(db, "A802", "RedLight", "FF225002A8xy00000000000000CCAAFF");
+            insertFrame(db, "A802", "GreenLight", "FF225002A800xy000000000000CCAAFF");
+            insertFrame(db, "A802", "BlueLight", "FF225002A80000xy0000000000CCAAFF");
+            insertFrame(db, "A802", "WhiteLight", "FF225002A8000000xy00000000CCAAFF");
+            insertFrame(db, "A803", "RedLight", "FF225003A8xy00000000000000CCAAFF");
+            insertFrame(db, "A803", "GreenLight", "FF225003A800xy000000000000CCAAFF");
+            insertFrame(db, "A803", "BlueLight", "FF225003A80000xy0000000000CCAAFF");
+            insertFrame(db, "A803", "WhiteLight", "FF225003A8000000xy00000000CCAAFF");
+            insertFrame(db, "A804", "RedLight", "FF225004A8xy00000000000000CCAAFF");
+            insertFrame(db, "A804", "GreenLight", "FF225004A800xy000000000000CCAAFF");
+            insertFrame(db, "A804", "BlueLight", "FF225004A80000xy0000000000CCAAFF");
+            insertFrame(db, "A804", "WhiteLight", "FF225004A8000000xy00000000CCAAFF");
 
         }
         if (oldVersion < 2) {
